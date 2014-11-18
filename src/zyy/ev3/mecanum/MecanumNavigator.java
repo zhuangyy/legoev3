@@ -6,9 +6,6 @@ import java.util.Iterator;
 import lejos.hardware.Brick;
 import lejos.hardware.BrickFinder;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
-import lejos.hardware.motor.NXTRegulatedMotor;
-import lejos.hardware.port.MotorPort;
-import lejos.hardware.port.Port;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.geometry.Point;
 
@@ -122,7 +119,7 @@ public class MecanumNavigator {
 		return true;
 	}
 	
-	public boolean rotate(boolean clockwise) {
+	public boolean spin(boolean clockwise) {
 		double x[] = new double[4];
 		double maxspeed = wheel.getMaxSpeed();
 		if (clockwise) {
