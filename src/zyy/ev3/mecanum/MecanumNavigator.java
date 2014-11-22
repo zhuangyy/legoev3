@@ -14,10 +14,6 @@ public class MecanumNavigator {
 	private RegulatedMotor[] motors;
 	private MecanumWheel wheel;
 	
-	public MecanumNavigator() {
-		this(new MecanumWheel40());
-	}
-	
 	public MecanumNavigator(MecanumWheel w) {
 		// FL, FR, BL, BR
 		String x[] = { "C", "D", "B", "A" };
@@ -53,7 +49,7 @@ public class MecanumNavigator {
 		}
 	}
 	
-	private boolean drive(double[] x, boolean unlimit) {
+	public boolean drive(double[] x, boolean unlimit) {
 		int i;
 		
 		setMotorSpeed(x);

@@ -14,11 +14,15 @@ public abstract class Mecalet {
 		return navigator;
 	}
 	
-	protected boolean timeout(boolean v) {
+	protected boolean timeout(boolean v, int delay) {
 		if (v) {
-			Delay.msDelay(3000);
+			Delay.msDelay(delay);
 		}
 		return v;
+	}
+	
+	protected boolean timeout(boolean v) {
+		return this.timeout(v, 3000);
 	}
 	
 	public abstract String getTitle();

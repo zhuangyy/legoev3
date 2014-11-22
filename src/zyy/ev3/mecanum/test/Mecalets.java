@@ -17,6 +17,7 @@ public class Mecalets extends ArrayList<Mecalet> {
 		add(new MecaletCartesian(nav));
 		add(new MecaletCircle1(nav));
 		add(new MecaletCircle2(nav));
+		add(new MecaletCircle3(nav));
 		add(new MecaletSpin(nav));
 	}
 

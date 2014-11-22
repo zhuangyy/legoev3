@@ -2,12 +2,19 @@ package zyy.ev3.mecanum;
 
 import lejos.robotics.geometry.Point;
 
-public abstract class MecanumWheel {
+public class MecanumWheel {
 	public static final int FL = 0;
 	public static final int FR = 1;
 	public static final int BL = 2;
 	public static final int BR = 3;
-		
+	private double maxspeed;
+	private double radius;
+	
+	public MecanumWheel(double radius, double maxspeed) {
+		this.radius = radius;
+		this.maxspeed = maxspeed;
+	}
+	
 	public int distanceToAngle(double distance) {
 		double r = (distance / (getRadius() * Math.PI)) * 180.0;
 		return (int)Math.round(r);
@@ -41,6 +48,18 @@ public abstract class MecanumWheel {
 		return polar(degree, magnitude);
 	}
 
-	public abstract double getRadius();
-	public abstract double getMaxSpeed();
+	public double getRadius() {
+		return radius;
+	}
+	
+	public double getMaxSpeed() {
+		return maxspeed;
+	}
+	
+	public double setMaxSpeed(double s) {
+		double r = getMaxSpeed();
+		this.maxspeed = s;
+		return r;
+	}
+
 }
